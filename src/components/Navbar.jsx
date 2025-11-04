@@ -1,58 +1,46 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+
+const navItems = [
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#services', label: 'Services' },
+  { href: '#case-studies', label: 'Case Studies' },
+  { href: '#testimonials', label: 'Testimonials' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#book', label: 'Contact / Book Now' },
+];
 
 export default function Navbar({ onOpenDashboard }) {
-  // Make navbar sticky with subtle shadow on scroll
-  useEffect(() => {
-    const handler = () => {
-      const el = document.getElementById('navbar');
-      if (!el) return;
-      if (window.scrollY > 8) {
-        el.classList.add('shadow-sm');
-      } else {
-        el.classList.remove('shadow-sm');
-      }
-    };
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
-
-  const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Case Studies', href: '#cases' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Contact / Book Now', href: '#book' },
-  ];
-
   return (
-    <div id="navbar" className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-black/5">
-      <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <a href="#home" className="font-semibold tracking-tight text-black">Velodent</a>
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-sm text-black/80 hover:text-black transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-          <motion.button
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.98 }}
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+        <a href="#home" className="font-semibold tracking-tight text-black">Velodent</a>
+        <nav className="hidden gap-6 md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-sm text-black/70 transition-colors hover:text-black"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div className="flex items-center gap-3">
+          <a
+            href="#book"
+            className="hidden rounded-full border border-black px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-black hover:text-white md:inline-block"
+          >
+            Book Now
+          </a>
+          <button
             onClick={onOpenDashboard}
-            className="rounded-full border border-black px-4 py-2 text-sm font-medium text-black hover:bg-black hover:text-white transition-colors"
+            className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black/90"
           >
             Dashboard
-          </motion.button>
+          </button>
         </div>
-      </nav>
-    </div>
+      </div>
+    </header>
   );
 }

@@ -1,67 +1,59 @@
-import { motion } from 'framer-motion';
+import React from 'react';
 
 export default function Hero() {
   return (
-    <section id="home" className="bg-white text-black">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="text-center max-w-3xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight"
-          >
-            AI Automation for Modern Dental Clinics
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-base sm:text-lg text-black/70"
-          >
-            Velodent streamlines front-desk ops, patient onboarding, and recall systems using safe, compliant AI.
-          </motion.p>
-        </div>
-
-        <div className="mt-10 grid md:grid-cols-2 gap-8 items-center">
-          <div className="aspect-video w-full overflow-hidden rounded-xl border border-black/10">
+    <section id="home" className="bg-white">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:py-16 md:py-20">
+        {/* Centered Video */}
+        <div className="mx-auto w-full max-w-5xl">
+          <div className="relative aspect-video overflow-hidden rounded-xl border border-black/10 shadow-sm">
             <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/Nw478YoO3og?si=0Pcoc1145T6JDndl"
-              title="Velodent Overview"
+              className="h-full w-full"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
+              title="Velodent Intro"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
           </div>
-
-          <div className="flex flex-col items-center md:items-start">
-            <ul className="space-y-3 text-sm text-black/80">
-              <li>• AI Receptionist that automates front desk operations</li>
-              <li>• Appointment booking, rescheduling, and follow-ups</li>
-              <li>• Recall systems for cleanings, braces, and more</li>
-              <li>• Insurance verification and claim eligibility checks</li>
-              <li>• Lead conversion and re-engagement</li>
-              <li>• 24/7 management with guaranteed 2× ROI</li>
-            </ul>
-            <a
-              href="https://cal.com/velodent-ogbkfv/20min"
-              className="mt-6 inline-flex items-center justify-center rounded-full border border-black px-5 py-2.5 text-sm font-medium hover:bg-black hover:text-white transition-colors"
-            >
-              Book a 20-Minute Discovery Call
-            </a>
-          </div>
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-sm text-black/70">Book a 20-Minute Discovery Call — Choose a Time That Works for You</p>
-          <a
-            href="https://cal.com/velodent-ogbkfv/20min"
-            className="mt-3 inline-flex items-center justify-center rounded-full border border-black px-5 py-2 text-sm font-medium hover:bg-black hover:text-white transition-colors"
-          >
-            Book Now
-          </a>
+        {/* Text under video, centered */}
+        <div className="mx-auto mt-10 max-w-3xl text-center">
+          <h1 className="text-3xl font-semibold tracking-tight text-black sm:text-4xl md:text-5xl">
+            Premium Dental Growth, Minimal Design
+          </h1>
+          <p className="mt-4 text-base leading-relaxed text-black/70 sm:text-lg">
+            Velodent delivers enterprise-grade marketing systems for modern dental practices.
+            Clean visuals, precise messaging, and measurable outcomes.
+          </p>
+          <ul className="mx-auto mt-6 grid max-w-xl grid-cols-1 gap-2 text-left text-sm text-black/70 sm:grid-cols-3 sm:text-center">
+            <li className="flex items-center justify-center gap-2">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-black" /> ROI-focused
+            </li>
+            <li className="flex items-center justify-center gap-2">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-black" /> HIPAA-aware
+            </li>
+            <li className="flex items-center justify-center gap-2">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-black" /> White-glove onboarding
+            </li>
+          </ul>
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <a
+              href="https://cal.com/velodent-ogbkfv/20min"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-black/90"
+            >
+              Book a 20‑min call
+            </a>
+            <a
+              href="#services"
+              className="rounded-full border border-black px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-black hover:text-white"
+            >
+              Explore services
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Sections from './components/Sections';
-import DashboardModal from './components/DashboardModal';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import Sections from './components/Sections.jsx';
+import DashboardModal from './components/DashboardModal.jsx';
 
-function App() {
+export default function App() {
   const [dashboardOpen, setDashboardOpen] = useState(false);
 
   return (
@@ -14,9 +14,7 @@ function App() {
         <Hero />
         <Sections />
       </main>
-      <DashboardModal open={dashboardOpen} onClose={() => setDashboardOpen(false)} />
+      <DashboardModal isOpen={dashboardOpen} onClose={() => setDashboardOpen(false)} />
     </div>
   );
 }
-
-export default App;
