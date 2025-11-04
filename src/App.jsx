@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Sections from './components/Sections.jsx';
 import DashboardModal from './components/DashboardModal.jsx';
+import ChatWidget from './components/ChatWidget.jsx';
 
 export default function App() {
   const [dashboardOpen, setDashboardOpen] = useState(false);
@@ -15,6 +16,8 @@ export default function App() {
         <Sections />
       </main>
       <DashboardModal isOpen={dashboardOpen} onClose={() => setDashboardOpen(false)} />
+      {/* AI Chat Widget - isolated, floating UI */}
+      <ChatWidget />
     </div>
   );
 }
