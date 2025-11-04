@@ -4,12 +4,12 @@ export default function Hero() {
   return (
     <section id="home" className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:py-16 md:py-20">
-        {/* Centered Video */}
-        <div className="mx-auto w-full max-w-5xl">
-          <div className="relative aspect-video overflow-hidden rounded-xl border border-black/10 shadow-sm">
+        {/* Dominant, centered video */}
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="relative aspect-video overflow-hidden rounded-xl border border-black/10 shadow-md">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
+              src="https://youtu.be/Nw478YoO3og?si=Tlq4mQe0x2RlSpPJ"
               title="Velodent Intro"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -18,7 +18,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Text under video, centered */}
+        {/* Text under video, centered (unchanged) */}
         <div className="mx-auto mt-10 max-w-3xl text-center">
           <h1 className="text-3xl font-semibold tracking-tight text-black sm:text-4xl md:text-5xl">
             Premium Dental Growth, Minimal Design
